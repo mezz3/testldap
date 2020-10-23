@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree" rel="stylesheet">
+    <title>HOME</title>
+    <style>
+        * {
+            font-family: 'Bai Jamjuree', sans-serif;
+        }
+        .board {
+            font-size: 1.75vw;
+            text-align: center;
+            margin: auto;
+            display: block;
+            border: 8px solid;
+            border-radius: 10px;
+            border-color: #3EC8AC;
+            padding: 5vw 5vw;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        USER : {{ test }} <br>
+        IP :   {{ ip }} <br>
+        GROUP : {{ group }} <br>
+        <br><hr><br>
+        {% if group == '01_Neighbor' %}
+        ACCESS : Can ping PC IP Address <br>
+        {% endif %}
+        {% if group == '02_Server' %}
+        ACCESS : Can connect to Web Server <br>
+        {% endif %}
+        {% if group == '03_Internet' %}
+        ACCESS : Can connect to Internet Except Facebook<br>
+        {% endif %}
+       
+    
+
+    </div>
+    <a href="{% url 'logout' group %}">logout</a>
+</body>
+</html>
